@@ -1,0 +1,16 @@
+[
+{
+  "modid": "thaumcraftrecipes",
+  "name": "ThaumcraftRecipes",
+  "description": "NONE.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Learwin,Tc_traveler"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -13,7 +13,7 @@ public class ThaumcraftRecipes {
     @Mod.Instance("thaumcraftrecipes")
     public static ThaumcraftRecipes instance;
     public static final String MODID = "thaumcraftrecipes";
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "1.0.1";
     public static final String MODNAME = "ThaumcraftRecipes";
     @SidedProxy(clientSide = "Tc_traveler.thaumcraftrecipes.client.ClientProxy",serverSide = "Tc_traveler.thaumcraftrecipes.common.CommonProxy")
     public static CommonProxy proxy;

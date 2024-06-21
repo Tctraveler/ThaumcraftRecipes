@@ -22,6 +22,6 @@ public class CreativeTabsThaumcraftRecipes extends CreativeTabs {
 
     @Override
     public int getSearchbarWidth() {
-        return 45;
+        return 89;
     }
 }

@@ -1,6 +1,7 @@
 package Tc_traveler.thaumcraftrecipes.items.foci;
 
 import Tc_traveler.thaumcraftrecipes.ThaumcraftRecipes;
+import Tc_traveler.thaumcraftrecipes.creativetab.CreativeTabsLoader;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -18,7 +19,12 @@ import thaumcraft.common.items.wands.ItemWandCasting;
 public class ItemNitorFocus extends ItemFocusBasic {
     private final String name = "focus_nitor";
     public ItemNitorFocus(){
+        super();
+        setMaxDamage(0);
+        setNoRepair();
+        setMaxStackSize(1);
         this.setUnlocalizedName(name);
+        this.setCreativeTab(CreativeTabsLoader.TRTabs);
     }
     public void addRegenerationBuff(EntityPlayer player){
         PotionEffect potionEffect = new PotionEffect(Potion.heal.id, 100, 1);

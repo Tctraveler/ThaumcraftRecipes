@@ -1,5 +1,9 @@
 package Tc_traveler.thaumcraftrecipes.items.foci;
 
+import Tc_traveler.thaumcraftrecipes.ThaumcraftRecipes;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -8,12 +12,13 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.wands.ItemFocusBasic;
 import thaumcraft.common.items.wands.ItemWandCasting;
 
-public class ItemNitorFocus extends ItemTRFocus{
+public class ItemNitorFocus extends ItemFocusBasic {
+    private final String name = "focus_nitor";
     public ItemNitorFocus(){
-        super("nitor");
-        this.setUnlocalizedName("focus_nitor");
+        this.setUnlocalizedName(name);
     }
     public void addRegenerationBuff(EntityPlayer player){
         PotionEffect potionEffect = new PotionEffect(Potion.heal.id, 100, 1);
@@ -42,5 +47,10 @@ public class ItemNitorFocus extends ItemTRFocus{
             addRegenerationBuff(player);
         }
         return itemstack;
+    }
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IIconRegister iconRegister){
+        this.icon = iconRegister.registerIcon(ThaumcraftRecipes.MODID+":"+name);
     }
 }

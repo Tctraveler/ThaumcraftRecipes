@@ -1,5 +1,9 @@
 package Tc_traveler.thaumcraftrecipes.items.foci;
 
+import Tc_traveler.thaumcraftrecipes.ThaumcraftRecipes;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -7,13 +11,14 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.wands.ItemFocusBasic;
 import thaumcraft.common.entities.projectile.EntityAlumentum;
 import thaumcraft.common.items.wands.ItemWandCasting;
 
-public class ItemAlumentumSpawnerFocus extends ItemTRFocus{
+public class ItemAlumentumSpawnerFocus extends ItemFocusBasic {
+    private final String name = "focus_alumentum_spawner";
     public ItemAlumentumSpawnerFocus(){
-        super("alumentum_spawner");
-        this.setUnlocalizedName("focus_alumentum_spawner");
+        this.setUnlocalizedName(name);
     }
     @Override
     public AspectList getVisCost(ItemStack focus){
@@ -39,5 +44,10 @@ public class ItemAlumentumSpawnerFocus extends ItemTRFocus{
             world.spawnEntityInWorld(entityAlumentum);
         }
         return itemstack;
+    }
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IIconRegister iconRegister){
+        this.icon = iconRegister.registerIcon(ThaumcraftRecipes.MODID+":"+ name);
     }
 }

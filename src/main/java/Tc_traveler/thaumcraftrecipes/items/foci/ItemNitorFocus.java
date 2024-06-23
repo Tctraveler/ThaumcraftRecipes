@@ -19,7 +19,6 @@ import thaumcraft.common.items.wands.ItemWandCasting;
 public class ItemNitorFocus extends ItemFocusBasic {
     private final String name = "focus_nitor";
     public ItemNitorFocus(){
-        super();
         setMaxDamage(0);
         setNoRepair();
         setMaxStackSize(1);
@@ -58,5 +57,9 @@ public class ItemNitorFocus extends ItemFocusBasic {
     @Override
     public void registerIcons(IIconRegister iconRegister){
         this.icon = iconRegister.registerIcon(ThaumcraftRecipes.MODID+":"+name);
+    }
+    @Override
+    public String getSortingHelper(final ItemStack stack){
+        return "NITOR"+super.getSortingHelper(stack);
     }
 }

@@ -19,7 +19,6 @@ import thaumcraft.common.items.wands.ItemWandCasting;
 public class ItemAlumentumSpawnerFocus extends ItemFocusBasic {
     private final String name = "focus_alumentum_spawner";
     public ItemAlumentumSpawnerFocus(){
-        super();
         setMaxDamage(0);
         setNoRepair();
         setMaxStackSize(1);
@@ -55,5 +54,9 @@ public class ItemAlumentumSpawnerFocus extends ItemFocusBasic {
     @Override
     public void registerIcons(IIconRegister iconRegister){
         this.icon = iconRegister.registerIcon(ThaumcraftRecipes.MODID+":"+ name);
+    }
+    @Override
+    public String getSortingHelper(final ItemStack stack){
+        return "ALUMENTUM"+super.getSortingHelper(stack);
     }
 }

@@ -7,9 +7,12 @@ import Tc_traveler.thaumcraftrecipes.research.myResearch;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.common.config.Configuration;
 
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event){
+        ConfigLoader.config = new Configuration(event.getSuggestedConfigurationFile());
+        ConfigLoader.initConfig();
         CreativeTabsLoader.init();
         TRItems.init();
     }

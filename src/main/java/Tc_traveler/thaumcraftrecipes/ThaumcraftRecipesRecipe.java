@@ -1,5 +1,6 @@
 package Tc_traveler.thaumcraftrecipes;
 
+import Tc_traveler.thaumcraftrecipes.common.ConfigLoader;
 import Tc_traveler.thaumcraftrecipes.items.TRItems;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
@@ -19,6 +20,8 @@ public class ThaumcraftRecipesRecipe {
         ConfigResearch.recipes.put("trmanabean",ThaumcraftApi.addArcaneCraftingRecipe("ADDMANABEAN",new ItemStack(ConfigItems.itemManaBean,1),new AspectList().add(Aspect.ORDER,25).add(Aspect.EARTH,25),new Object[]{"aaa","bcd","aaa", 'a',new ItemStack(ConfigItems.itemResource,1,14),'b',new ItemStack(ConfigItems.itemShard,1,3),'c',new ItemStack(Items.dye,1,3),'d',new ItemStack(ConfigItems.itemShard,1,4)}));
         ConfigResearch.recipes.put("tralumentumspawnerfocus",ThaumcraftApi.addInfusionCraftingRecipe("ALUMENTUMSPAWNERFOCUS",new ItemStack(TRItems.alumentumSpawnerFoci,1),5,(new AspectList().add(Aspect.FIRE,25).add(Aspect.ENTROPY,16).add(Aspect.ENERGY,25).add(Aspect.CRAFT,16)),new ItemStack(ConfigItems.itemResource,1,0),(new ItemStack[]{new ItemStack(ConfigItems.itemShard,1,5),new ItemStack(Items.quartz,1),new ItemStack(ConfigItems.itemResource,1,0),new ItemStack(Items.quartz,1),new ItemStack(ConfigItems.itemShard,1,5),new ItemStack(Items.quartz,1),new ItemStack(ConfigItems.itemResource,1,0),new ItemStack(Items.quartz,1)})));
         ConfigResearch.recipes.put("trnitorfocus",ThaumcraftApi.addInfusionCraftingRecipe("NITORFOCUS",new ItemStack(TRItems.nitorFoci,1),5,(new AspectList().add(Aspect.FIRE,25).add(Aspect.ENERGY,16).add(Aspect.HEAL,8).add(Aspect.CRAFT,16)),new ItemStack(ConfigItems.itemResource,1,1),(new ItemStack[]{new ItemStack(ConfigItems.itemShard,1,3),new ItemStack(Items.quartz,1),new ItemStack(ConfigItems.itemResource,1,1),new ItemStack(Items.quartz,1),new ItemStack(ConfigItems.itemShard,1,4),new ItemStack(Items.quartz,1),new ItemStack(ConfigItems.itemResource,1,1),new ItemStack(Items.quartz,1)})));
-        ConfigResearch.recipes.put("trpech'scursefocus",ThaumcraftApi.addInfusionCraftingRecipe("PECH'SCURSEFOCUS",new ItemStack(ConfigItems.itemFocusPech,1),16,(new AspectList().add(Aspect.CRAFT,16).add(Aspect.GREED,16).add(Aspect.HUNGER,8).add(Aspect.POISON,4).add(Aspect.MAN,4)),new ItemStack(ConfigItems.itemFocusExcavation,1),new ItemStack[]{new ItemStack(Items.bone,1),new ItemStack(ConfigItems.itemShard,1,5),new ItemStack(Items.quartz,1),new ItemStack(Items.ender_pearl,1),new ItemStack(Items.spider_eye,1),new ItemStack(ConfigItems.itemShard,1,5),new ItemStack(Items.quartz,1),new ItemStack(Items.ender_pearl,1)}));
+        if(ConfigLoader.ENABLE_PECHSCURSE){
+            ConfigResearch.recipes.put("trpech'scursefocus",ThaumcraftApi.addInfusionCraftingRecipe("PECH'SCURSEFOCUS",new ItemStack(ConfigItems.itemFocusPech,1),16,(new AspectList().add(Aspect.CRAFT,16).add(Aspect.GREED,16).add(Aspect.HUNGER,8).add(Aspect.POISON,4).add(Aspect.MAN,4)),new ItemStack(ConfigItems.itemFocusExcavation,1),new ItemStack[]{new ItemStack(Items.bone,1),new ItemStack(ConfigItems.itemShard,1,5),new ItemStack(Items.quartz,1),new ItemStack(Items.ender_pearl,1),new ItemStack(Items.spider_eye,1),new ItemStack(ConfigItems.itemShard,1,5),new ItemStack(Items.quartz,1),new ItemStack(Items.ender_pearl,1)}));
+        }
     }
 }

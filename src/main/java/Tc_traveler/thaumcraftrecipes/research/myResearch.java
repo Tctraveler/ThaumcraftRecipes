@@ -1,5 +1,6 @@
 package Tc_traveler.thaumcraftrecipes.research;
 
+import Tc_traveler.thaumcraftrecipes.common.ConfigLoader;
 import Tc_traveler.thaumcraftrecipes.items.TRItems;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -34,7 +35,7 @@ public class myResearch {
                 ,2,-2,2,new ResourceLocation("thaumcraft","textures/blocks/greatwoodsapling.png")))
                 .setParents(new String[]{"DESCRIPTION"})
                 .setPages(new ResearchPage[]{new ResearchPage("tr.research.addgreatwood_1"),new ResearchPage((CrucibleRecipe)ConfigResearch.recipes.get("trgreatwoodsapling"))})
-                .setHidden()
+                .setConcealed()
                 .registerResearchItem();
         (new ResearchItem("ADDSILVERWOOD","SYNTHESIS",new AspectList()
                 .add(Aspect.PLANT,4)
@@ -45,7 +46,7 @@ public class myResearch {
                 ,2,2,7,new ResourceLocation("thaumcraft","textures/blocks/silverwoodsapling.png")))
                 .setParents(new String[]{"ADDGREATWOOD","INFUSION"})
                 .setPages(new ResearchPage[]{new ResearchPage("tr.research.addsilverwood_1"),new ResearchPage((InfusionRecipe)ConfigResearch.recipes.get("trsilverwoodsapling"))})
-                .setHidden()
+                .setConcealed()
                 .registerResearchItem();
         (new ResearchItem("ADDMANABEAN","SYNTHESIS",new AspectList()
                 .add(Aspect.PLANT,4)
@@ -54,7 +55,7 @@ public class myResearch {
                 .setParents(new String[]{"ADDGREATWOOD","ADDSILVERWOOD"})
                 .setSecondary()
                 .setPages(new ResearchPage[]{new ResearchPage("tr.research.addmanabean_1"),new ResearchPage((ShapedArcaneRecipe)ConfigResearch.recipes.get("trmanabean"))})
-                .setHidden()
+                .setConcealed()
                 .registerResearchItem();
         (new ResearchItem("ALUMENTUMSPAWNERFOCUS","SYNTHESIS",new AspectList()
                 .add(Aspect.ENERGY,4)
@@ -64,7 +65,7 @@ public class myResearch {
                 .add(Aspect.MAGIC,4),-2,-2,2,new ItemStack(TRItems.alumentumSpawnerFoci)))
                 .setParents(new String[]{"DESCRIPTION","ALUMENTUM"})
                 .setPages(new ResearchPage[]{new ResearchPage("tr.research.alumentumspawnerfocus_1"),new ResearchPage((InfusionRecipe) ConfigResearch.recipes.get("tralumentumspawnerfocus"))})
-                .setHidden()
+                .setConcealed()
                 .registerResearchItem();
         (new ResearchItem("NITORFOCUS","SYNTHESIS",new AspectList()
                 .add(Aspect.ENERGY,4)
@@ -73,16 +74,18 @@ public class myResearch {
                 .add(Aspect.HEAL,4),-2,2,2,new ItemStack(TRItems.nitorFoci)))
                 .setParents(new String[]{"DESCRIPTION","NITOR"})
                 .setPages(new ResearchPage[]{new ResearchPage("tr.research.nitorfocus_1"),new ResearchPage((InfusionRecipe) ConfigResearch.recipes.get("trnitorfocus"))})
-                .setHidden()
+                .setConcealed()
                 .registerResearchItem();
-        (new ResearchItem("PECH'SCURSEFOCUS","SYNTHESIS",new AspectList()
-                .add(Aspect.CRAFT,4)
-                .add(Aspect.GREED,4)
-                .add(Aspect.HUNGER,4)
-                .add(Aspect.POISON,4),-4,2,9,new ItemStack(ConfigItems.itemFocusPech)))
-                .setParents(new String[]{"ALUMENTUMSPAWNERFOCUS","NITORFOCUS"})
-                .setPages(new ResearchPage[]{new ResearchPage("tr.research.pech'scursefocus_1"),new ResearchPage((InfusionRecipe) ConfigResearch.recipes.get("trpech'scursefocus"))})
-                .setHidden()
-                .registerResearchItem();
+        if(ConfigLoader.ENABLE_PECHSCURSE){
+            (new ResearchItem("PECH'SCURSEFOCUS","SYNTHESIS",new AspectList()
+                    .add(Aspect.CRAFT,4)
+                    .add(Aspect.GREED,4)
+                    .add(Aspect.HUNGER,4)
+                    .add(Aspect.POISON,4),-4,2,9,new ItemStack(ConfigItems.itemFocusPech)))
+                    .setParents(new String[]{"ALUMENTUMSPAWNERFOCUS","NITORFOCUS"})
+                    .setPages(new ResearchPage[]{new ResearchPage("tr.research.pech'scursefocus_1"),new ResearchPage((InfusionRecipe) ConfigResearch.recipes.get("trpech'scursefocus"))})
+                    .setConcealed()
+                    .registerResearchItem();
+        }
     }
 }

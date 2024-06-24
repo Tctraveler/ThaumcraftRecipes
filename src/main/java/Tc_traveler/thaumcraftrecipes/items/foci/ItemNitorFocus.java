@@ -62,4 +62,8 @@ public class ItemNitorFocus extends ItemFocusBasic {
     public String getSortingHelper(final ItemStack stack){
         return "NITOR"+super.getSortingHelper(stack);
     }
+    @Override
+    public boolean isVisCostPerTick(ItemStack focusstack) {
+        return false;
+    }
 }

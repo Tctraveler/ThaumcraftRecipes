@@ -7,6 +7,7 @@ import Tc_traveler.thaumcraftrecipes.research.myResearch;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.common.config.Configuration;
 
 public class CommonProxy {
@@ -22,5 +23,8 @@ public class CommonProxy {
     public void postInit(FMLPostInitializationEvent event){
         ThaumcraftRecipesRecipe.addRecipes();
         myResearch.addResearch();
+    }
+    public EntityPlayer getClientPlayer() {
+        return null;
     }
 }

@@ -20,6 +20,8 @@ tc.research_name.NITORFOCUS=Wand Focus: Nitor
 tc.research_text.NITORFOCUS=Shining
 tc.research_name.PECH'SCURSEFOCUS=Wand Focus: Pech's Curse
 tc.research_text.PECH'SCURSEFOCUS=Curse...Curse...Curse...
+tc.research_name.TRANSMUTATIONFOCUS=Wand Focus: Transmutation
+tc.research_text.TRANSMUTATIONFOCUS=Can't find them?
 
 #txt
 tr.research.description_1=Having been immersed in the synthesis of mysticism for a long time, you gradually discovered some characteristics of the "Fabrico" elements. Some things that originally couldn't be crafted gradually materialized in your hands with the help of the "Fabrico" elements.
@@ -29,6 +31,7 @@ tr.research.addmanabean_1=You can craft mana beans using some salis mundus and s
 tr.research.alumentumspawnerfocus_1=By understanding the knowledge of the alumentum, you discovered that it can be made into a completely destructive tool. Defeat your opponents!
 tr.research.nitorfocus_1=By understanding the knowledge of the nitor, you discovered that under its radiance, some things automatically heal, a phenomenon that is more common with the assistance of the earth.
 tr.research.pech'scursefocus_1=Tired of dealing with the unfeeling pechs? You decide to create one yourself. But be careful not to let the poison touch you.
+tr.research.transmutationfocus_1=You gather the powers of the seven crystals to obtain a wand focus that can transform cobblestone or stone into infused stone. However, be careful of the remaining vis in your wand.[WIP]
 
 #itemGroup
 itemGroup.thaumcraftrecipes=TR

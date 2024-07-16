@@ -20,6 +20,8 @@ tc.research_name.NITORFOCUS=法杖核心：闪耀
 tc.research_text.NITORFOCUS=闪烁
 tc.research_name.PECH'SCURSEFOCUS=法杖核心：岩精之诅咒
 tc.research_text.PECH'SCURSEFOCUS=咒...咒...咒...
+tc.research_name.TRANSMUTATIONFOCUS=法杖核心：嬗变
+tc.research_text.TRANSMUTATIONFOCUS=找不到？
 
 #txt
 tr.research.description_1=长期浸淫于神秘学合成之中，你逐渐发现了“合成”要素的一些特点.一些原本不可以被合成的东西，在“合成”要素的帮助下，逐渐显形于你的手中.
@@ -29,6 +31,7 @@ tr.research.addmanabean_1=你可以用一些世界盐和碎片合成魔豆，但
 tr.research.alumentumspawnerfocus_1=通过了解源动之焰的知识，你发现了它能被制成一个完全破坏性工具.击倒你的对手！
 tr.research.nitorfocus_1=通过了解闪耀之光的知识，你发现在它的光辉下，一些东西会自动愈合，这种情况在大地的辅助下显得更为常见.
 tr.research.pech'scursefocus_1=苦于与不近人情的岩精交易？你决定自己制作一个.不过别让毒药碰到你自己了.
+tr.research.transmutationfocus_1=你将七种魔晶的力量汇聚.得到一个可以将圆石或者石头转化为蕴魔石的法杖核心.不过要小心你法杖剩余的魔力.[WIP]
 
 #itemGroup
 itemGroup.thaumcraftrecipes=神秘合成

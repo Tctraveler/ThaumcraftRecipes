@@ -14,7 +14,7 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.config.ConfigResearch;
-
+// col为列 row为行 同时为正时在右下
 public class myResearch {
     public static void addResearch(){
         ResearchCategories.registerCategory("SYNTHESIS",new ResourceLocation("thaumcraftrecipes","textures/items/TRicon.png"),new ResourceLocation("thaumcraft", "textures/gui/gui_researchback.png"));
@@ -63,7 +63,7 @@ public class myResearch {
                 .add(Aspect.FIRE,4)
                 .add(Aspect.CRAFT,4)
                 .add(Aspect.MAGIC,4),-2,-2,2,new ItemStack(TRItems.alumentumSpawnerFoci)))
-                .setParents(new String[]{"DESCRIPTION","ALUMENTUM"})
+                .setParents(new String[]{"DESCRIPTION","ALUMENTUM","INFUSION"})
                 .setPages(new ResearchPage[]{new ResearchPage("tr.research.alumentumspawnerfocus_1"),new ResearchPage((InfusionRecipe) ConfigResearch.recipes.get("tralumentumspawnerfocus"))})
                 .setConcealed()
                 .registerResearchItem();
@@ -72,7 +72,7 @@ public class myResearch {
                 .add(Aspect.FIRE,4)
                 .add(Aspect.CRAFT,4)
                 .add(Aspect.HEAL,4),-2,2,2,new ItemStack(TRItems.nitorFoci)))
-                .setParents(new String[]{"DESCRIPTION","NITOR"})
+                .setParents(new String[]{"DESCRIPTION","NITOR","INFUSION"})
                 .setPages(new ResearchPage[]{new ResearchPage("tr.research.nitorfocus_1"),new ResearchPage((InfusionRecipe) ConfigResearch.recipes.get("trnitorfocus"))})
                 .setConcealed()
                 .registerResearchItem();
@@ -87,5 +87,13 @@ public class myResearch {
                     .setConcealed()
                     .registerResearchItem();
         }
+        (new ResearchItem("TRANSMUTATIONFOCUS","SYNTHESIS",new AspectList()
+                .add(Aspect.CRAFT,4)
+                .add(Aspect.EXCHANGE,4)
+                .add(Aspect.CRYSTAL,8),-4,-2,5,new ItemStack(TRItems.transmutationFoci)))
+                .setParents(new String[]{"ALUMENTUMSPAWNERFOCUS","NITORFOCUS"})
+                .setPages(new ResearchPage[]{new ResearchPage("tr.research.transmutationfocus_1"),new ResearchPage((InfusionRecipe) ConfigResearch.recipes.get("trtransmutationfocus"))})
+                .setConcealed()
+                .registerResearchItem();
     }
 }

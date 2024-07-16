@@ -15,7 +15,7 @@ public class ThaumcraftRecipes {
     @Mod.Instance("thaumcraftrecipes")
     public static ThaumcraftRecipes instance;
     public static final String MODID = "thaumcraftrecipes";
-    public static final String VERSION = "1.0.2";
+    public static final String VERSION = "1.1.0";
     public static final String MODNAME = "ThaumcraftRecipes";
     public static final Logger logger = LogManager.getLogger("THAUMCRAFT RECIPES");
     @SidedProxy(clientSide = "Tc_traveler.thaumcraftrecipes.client.ClientProxy",serverSide = "Tc_traveler.thaumcraftrecipes.common.CommonProxy")

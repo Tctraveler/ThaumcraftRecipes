@@ -16,6 +16,7 @@ import thaumcraft.api.wands.ItemFocusBasic;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.items.wands.ItemWandCasting;
 
+import java.awt.*;
 import java.util.Random;
 
 public class ItemTransmutationFocus extends ItemFocusBasic {
@@ -59,7 +60,8 @@ public class ItemTransmutationFocus extends ItemFocusBasic {
     }
     @Override
     public int getFocusColor(ItemStack focusstack) {
-        return 16777215;
+        EntityPlayer player  = ThaumcraftRecipes.proxy.getClientPlayer();
+        return player ==null? 0xFFFFFF : Color.HSBtoRGB(player.ticksExisted * 2 % 720 / 720F, 1F, 1F);
     }
     @Override
     public String getSortingHelper(final ItemStack focusstack) {

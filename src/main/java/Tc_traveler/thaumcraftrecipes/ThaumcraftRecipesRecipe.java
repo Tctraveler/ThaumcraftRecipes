@@ -23,5 +23,6 @@ public class ThaumcraftRecipesRecipe {
         if(ConfigLoader.ENABLE_PECHSCURSE){
             ConfigResearch.recipes.put("trpech'scursefocus",ThaumcraftApi.addInfusionCraftingRecipe("PECH'SCURSEFOCUS",new ItemStack(ConfigItems.itemFocusPech,1),16,(new AspectList().add(Aspect.CRAFT,16).add(Aspect.GREED,16).add(Aspect.HUNGER,8).add(Aspect.POISON,4).add(Aspect.MAN,4)),new ItemStack(ConfigItems.itemFocusExcavation,1),new ItemStack[]{new ItemStack(Items.bone,1),new ItemStack(ConfigItems.itemShard,1,5),new ItemStack(Items.quartz,1),new ItemStack(Items.ender_pearl,1),new ItemStack(Items.spider_eye,1),new ItemStack(ConfigItems.itemShard,1,5),new ItemStack(Items.quartz,1),new ItemStack(Items.ender_pearl,1)}));
         }
+        ConfigResearch.recipes.put("trtransmutationfocus",ThaumcraftApi.addInfusionCraftingRecipe("TRANSMUTATIONFOCUS",new ItemStack(TRItems.transmutationFoci,1),9,(new  AspectList().add(Aspect.ORDER,64).add(Aspect.WATER,64).add(Aspect.EARTH,64).add(Aspect.FIRE,64).add(Aspect.AIR,64).add(Aspect.ENTROPY,64)),new ItemStack(ConfigBlocks.blockCrystal,1,6),new ItemStack[]{new ItemStack(ConfigBlocks.blockCrystal,1,0),new ItemStack(ConfigBlocks.blockCrystal,1,1),new ItemStack(ConfigBlocks.blockCrystal,1,2),new ItemStack(ConfigBlocks.blockCrystal,1,3),new ItemStack(ConfigBlocks.blockCrystal,1,4),new ItemStack(ConfigBlocks.blockCrystal,1,5)}));
     }
 }

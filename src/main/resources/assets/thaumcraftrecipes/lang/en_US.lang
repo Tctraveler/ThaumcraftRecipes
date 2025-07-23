@@ -1,0 +1,37 @@
+#item
+item.focus_alumentum_spawner.name=Wand Focus: Alumentum
+item.focus_nitor.name=Wand Focus: Nitor
+
+#category
+tc.research_category.SYNTHESIS=Synthesis
+
+#research
+tc.research_name.DESCRIPTION=The Description of Synthesis
+tc.research_text.DESCRIPTION=From Scratch
+tc.research_name.ADDGREATWOOD=Crafting Greatwood Sapling
+tc.research_text.ADDGREATWOOD=Sudden Inspiration
+tc.research_name.ADDSILVERWOOD=Crafting Silverwood Sapling
+tc.research_text.ADDSILVERWOOD=Eureka!
+tc.research_name.ADDMANABEAN=Crafting Mana Bean
+tc.research_text.ADDMANABEAN=Draw... a prize?
+tc.research_name.ALUMENTUMSPAWNERFOCUS=Wand Focus: Alumentum
+tc.research_text.ALUMENTUMSPAWNERFOCUS=Controllable
+tc.research_name.NITORFOCUS=Wand Focus: Nitor
+tc.research_text.NITORFOCUS=Shining
+tc.research_name.PECH'SCURSEFOCUS=Wand Focus: Pech's Curse
+tc.research_text.PECH'SCURSEFOCUS=Curse...Curse...Curse...
+tc.research_name.TRANSMUTATIONFOCUS=Wand Focus: Transmutation
+tc.research_text.TRANSMUTATIONFOCUS=Can't find them?
+
+#txt
+tr.research.description_1=Having been immersed in the synthesis of mysticism for a long time, you gradually discovered some characteristics of the "Fabrico" elements. Some things that originally couldn't be crafted gradually materialized in your hands with the help of the "Fabrico" elements.
+tr.research.addgreatwood_1=How to craft a greatwoodsapling?1.Boil the crucible2.Add the materials3.Take out the sapling
+tr.research.addsilverwood_1=Silverwoods often do not drop saplings, so you are trying to use a certain method to create a sapling.
+tr.research.addmanabean_1=You can craft mana beans using some salis mundus and shards, but you know this is not an effective method.
+tr.research.alumentumspawnerfocus_1=By understanding the knowledge of the alumentum, you discovered that it can be made into a completely destructive tool. Defeat your opponents!
+tr.research.nitorfocus_1=By understanding the knowledge of the nitor, you discovered that under its radiance, some things automatically heal, a phenomenon that is more common with the assistance of the earth.
+tr.research.pech'scursefocus_1=Tired of dealing with the unfeeling pechs? You decide to create one yourself. But be careful not to let the poison touch you.
+tr.research.transmutationfocus_1=You gather the powers of the seven crystals to obtain a wand focus that can transform cobblestone or stone into infused stone. However, be careful of the remaining vis in your wand.[WIP]
+
+#itemGroup
+itemGroup.thaumcraftrecipes=TR

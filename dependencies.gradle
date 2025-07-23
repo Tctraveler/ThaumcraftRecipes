@@ -35,4 +35,7 @@
  */
 dependencies {
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.7.4-GTNH:dev")
+
+    api('com.github.GTNewHorizons:Baubles:1.0.4:dev')
+    devOnlyNonPublishable(rfg.deobf(project.files("libs/Thaumcraft-1.7.10-4.2.3.5a.jar")))
 }

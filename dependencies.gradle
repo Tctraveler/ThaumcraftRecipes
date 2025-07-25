@@ -38,4 +38,6 @@ dependencies {
 
     api('com.github.GTNewHorizons:Baubles:1.0.4:dev')
     implementation('thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev')
+    implementation("org.jetbrains:annotations:24.0.1")
+//  runtimeOnlyNonPublishable(rfg.deobf(project.files("libs/ThaumicConcilium-1.0.11.jar")))
 }

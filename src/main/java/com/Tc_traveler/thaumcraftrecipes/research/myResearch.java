@@ -4,6 +4,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import com.Tc_traveler.thaumcraftrecipes.common.ConfigLoader;
+import com.Tc_traveler.thaumcraftrecipes.crafting.NodeRecipe;
 import com.Tc_traveler.thaumcraftrecipes.items.TRItems;
 
 import thaumcraft.api.aspects.Aspect;
@@ -157,6 +158,18 @@ public class myResearch {
                     new ResearchPage[] { new ResearchPage("tr.research.transmutationfocus_1"),
                         new ResearchPage((InfusionRecipe) ConfigResearch.recipes.get("trtransmutationfocus")) })
                 .setConcealed()
+                .registerResearchItem();
+        (new ResearchItem(
+            "NODECRAFTINGTEST",
+            "SYNTHESIS",
+            new AspectList().add(Aspect.CRAFT, 4),
+            4,
+            4,
+            5,
+            new ItemStack(ConfigItems.itemFocusPech))).setParents("DESCRIPTION")
+                .setPages(
+                    new ResearchPage("tr.research.nodecraftingtest_1"),
+                    new TRResearchPage((NodeRecipe) ConfigResearch.recipes.get("trnodecraftingtest")))
                 .registerResearchItem();
     }
 }

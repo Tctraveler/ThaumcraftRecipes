@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8.5-GTNH",
+  "package": "com.Tc_traveler.thaumcraftrecipes.mixins.late",
+  "refmap": "mixins.thaumcraftrecipes.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8"
+}
+

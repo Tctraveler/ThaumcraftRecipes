@@ -5,6 +5,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.Tc_traveler.thaumcraftrecipes.common.ConfigLoader;
+import com.Tc_traveler.thaumcraftrecipes.helper.ThaumcraftApiHelper;
 import com.Tc_traveler.thaumcraftrecipes.items.TRItems;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -118,5 +119,14 @@ public class ThaumcraftRecipesRecipe {
                     new ItemStack(ConfigBlocks.blockCrystal, 1, 1), new ItemStack(ConfigBlocks.blockCrystal, 1, 2),
                     new ItemStack(ConfigBlocks.blockCrystal, 1, 3), new ItemStack(ConfigBlocks.blockCrystal, 1, 4),
                     new ItemStack(ConfigBlocks.blockCrystal, 1, 5) }));
+        ConfigResearch.recipes.put(
+            "trnodecraftingtest",
+            ThaumcraftApiHelper.addNodeRecipe(
+                "NODECRAFTINGTEST",
+                new ItemStack(GameRegistry.findItem("Thaumcraft", "blockCustomPlant"), 1, 0),
+                new ItemStack(Blocks.sapling, 1, 1),
+                (new AspectList()).add(Aspect.PLANT, 4)
+                    .add(Aspect.TREE, 4)
+                    .add(Aspect.CRAFT, 4)));
     }
 }

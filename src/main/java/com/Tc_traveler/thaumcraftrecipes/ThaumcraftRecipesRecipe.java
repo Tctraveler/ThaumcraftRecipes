@@ -127,6 +127,7 @@ public class ThaumcraftRecipesRecipe {
                 new ItemStack(Blocks.sapling, 1, 1),
                 (new AspectList()).add(Aspect.PLANT, 4)
                     .add(Aspect.TREE, 4)
-                    .add(Aspect.CRAFT, 4)));
+                    .add(Aspect.CRAFT, 4)
+                    .add(Aspect.AIR,20).add(Aspect.WATER,30).add(Aspect.EARTH,60).add(Aspect.COLD,2)));
     }
 }

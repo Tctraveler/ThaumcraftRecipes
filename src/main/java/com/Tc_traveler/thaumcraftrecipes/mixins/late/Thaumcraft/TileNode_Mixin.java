@@ -106,7 +106,8 @@ public abstract class TileNode_Mixin extends TileThaumcraft implements ITileNode
                             this.thaumcraftRecipes$recipeEssentia = recipe.aspects.copy();
                             this.thaumcraftRecipes$recipeInput = itemStack.copy();
                             this.thaumcraftRecipes$recipeInput.stackSize = 1;
-                            this.thaumcraftRecipes$recipeOutput = recipe.getRecipeOutput().copy();
+                            this.thaumcraftRecipes$recipeOutput = recipe.getRecipeOutput()
+                                .copy();
                             this.thaumcraftRecipes$isCrafting = true;
                             this.worldObj.playSoundEffect(
                                 this.xCoord,

@@ -10,6 +10,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
@@ -195,24 +196,33 @@ public abstract class GuiResearchRecipe_Mixin extends GuiScreen {
             GL11.glTranslatef(-16.0F, 70.0F, 0.0F);
             this.drawTexturedModalRect(0, 0, 0, 0, 256, 256);
             GL11.glPopMatrix();
-            int mposx = mx;
-            int mposy = my;
-            int total = 0;
-            int rows = (rc.aspects.size() - 1) / 3;
-            int shift = (3 - rc.aspects.size() % 3) * 10;
-            int sx = x + start + 28;
-            int sy = y + 85 + 32 - 10 * rows;
-
-            for (Aspect tag : rc.aspects.getAspectsSorted()) {
-                int m = 0;
-                if (total / 3 >= rows && (rows > 1 || rc.aspects.size() < 3)) {
-                    m = 1;
-                }
-
-                int vx = sx + total % 3 * 20 + shift * m;
-                int vy = sy + total / 3 * 20;
-                UtilsFX.drawTag(vx, vy, tag, (float) rc.aspects.getAmount(tag), 0, (double) this.zLevel);
-                ++total;
+            // int mposx = mx;
+            // int mposy = my;
+            // int total = 0;
+            // int rows = (rc.aspects.size() - 1) / 3; 0
+            // int shift = (3 - rc.aspects.size() % 3) * 10; 20
+            // int sx = x + start + 28;
+            // int sy = y + 85 + 32 - 10 * rows; y+85+32
+            //
+            // for (Aspect tag : rc.aspects.getAspectsSorted()) {
+            // int m = 0;
+            // if (total / 3 >= rows && (rows > 1 || rc.aspects.size() < 3)) {
+            // m = 1;
+            // }
+            //
+            // int vx = sx + total % 3 * 20 + shift * m;
+            // int vy = sy + total / 3 * 20;
+            // UtilsFX.drawTag(vx, vy, tag, (float) rc.aspects.getAmount(tag), 0, (double) this.zLevel);
+            // ++total;
+            // }
+            Aspect[] stored = rc.aspects.getAspectsSortedAmount();
+            float pieSlice = (float) (360 / stored.length);
+            float currentRot = -90.0F;
+            for (Aspect aspect : stored) {
+                int xx = (int) (MathHelper.cos(currentRot / 180.0F * 3.1415927F) * 20.0F) + x + start + 48;
+                int yy = (int) (MathHelper.sin(currentRot / 180.0F * 3.1415927F) * 20.0F) + y + 85 + 32;
+                currentRot += pieSlice;
+                UtilsFX.drawTag(xx, yy, aspect, rc.aspects.getAmount(aspect), 0, this.zLevel);
             }
 
             GL11.glPushMatrix();
@@ -244,16 +254,16 @@ public abstract class GuiResearchRecipe_Mixin extends GuiScreen {
                 this.mc.fontRenderer,
                 this.mc.renderEngine,
                 InventoryUtils.cycleItemStack(rc.input),
-                x + 16 + start,
-                y + 60);
+                x + 48 + start,
+                y + 85 + 32);
             itemRenderer.renderItemOverlayIntoGUI(
                 this.mc.fontRenderer,
                 this.mc.renderEngine,
                 InventoryUtils.cycleItemStack(rc.input)
                     .copy()
                     .splitStack(1),
-                x + 16 + start,
-                y + 60);
+                x + 48 + start,
+                y + 85 + 32);
             RenderHelper.disableStandardItemLighting();
             GL11.glEnable(2896);
             GL11.glPopMatrix();
@@ -269,7 +279,7 @@ public abstract class GuiResearchRecipe_Mixin extends GuiScreen {
                     11);
             }
 
-            if (mx >= x + 16 + start && my >= y + 60 && mx < x + 16 + start + 16 && my < y + 60 + 16) {
+            if (mx >= x + 48 + start && my >= y + 85 + 32 && mx < x + 48 + start + 16 && my < y + 85 + 32 + 16) {
                 List addtext = InventoryUtils.cycleItemStack(rc.input)
                     .getTooltip(this.mc.thePlayer, this.mc.gameSettings.advancedItemTooltips);
                 Object[] ref = this.findRecipeReference(InventoryUtils.cycleItemStack(rc.input));
@@ -284,28 +294,43 @@ public abstract class GuiResearchRecipe_Mixin extends GuiScreen {
                 this.drawCustomTooltip(this, itemRenderer, this.fontRendererObj, addtext, mx, my, 11);
             }
 
-            total = 0;
-
-            for (Aspect tag : rc.aspects.getAspectsSorted()) {
-                int m = 0;
-                if (total / 3 >= rows && (rows > 1 || rc.aspects.size() < 3)) {
-                    m = 1;
-                }
-
-                int vx = sx + total % 3 * 20 + shift * m;
-                int vy = sy + total / 3 * 20;
-                if (mposx >= vx && mposy >= vy && mposx < vx + 16 && mposy < vy + 16) {
+            // total = 0;
+            //
+            // for (Aspect tag : rc.aspects.getAspectsSorted()) {
+            // int m = 0;
+            // if (total / 3 >= rows && (rows > 1 || rc.aspects.size() < 3)) {
+            // m = 1;
+            // }
+            //
+            // int vx = sx + total % 3 * 20 + shift * m;
+            // int vy = sy + total / 3 * 20;
+            // if (mposx >= vx && mposy >= vy && mposx < vx + 16 && mposy < vy + 16) {
+            // this.drawCustomTooltip(
+            // this,
+            // itemRenderer,
+            // this.fontRendererObj,
+            // Arrays.asList(new String[] { tag.getName(), tag.getLocalizedDescription() }),
+            // mx,
+            // my,
+            // 11);
+            // }
+            //
+            // ++total;
+            // }
+            for (Aspect aspect : stored) {
+                int xx = (int) (MathHelper.cos(currentRot / 180.0F * 3.1415927F) * 20.0F) + x + start + 48;
+                int yy = (int) (MathHelper.sin(currentRot / 180.0F * 3.1415927F) * 20.0F) + y + 85 + 32;
+                currentRot += pieSlice;
+                if (mx >= xx && my >= yy && mx < xx + 16 && my < yy + 16) {
                     this.drawCustomTooltip(
                         this,
                         itemRenderer,
                         this.fontRendererObj,
-                        Arrays.asList(new String[] { tag.getName(), tag.getLocalizedDescription() }),
+                        Arrays.asList(new String[] { aspect.getName(), aspect.getLocalizedDescription() }),
                         mx,
                         my,
                         11);
                 }
-
-                ++total;
             }
 
             GL11.glPopMatrix();

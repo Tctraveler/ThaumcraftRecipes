@@ -92,7 +92,7 @@ public abstract class GuiResearchRecipe_Mixin extends GuiScreen {
 
     /**
      * @author Tc_traveler
-     * @reason New idea.
+     * @reason Draw node crafting page.
      */
     @Overwrite
     private void drawPage(ResearchPage pageParm, int side, int x, int y, int mx, int my) {

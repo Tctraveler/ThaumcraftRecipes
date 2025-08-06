@@ -12,7 +12,8 @@ import cpw.mods.fml.relauncher.FMLLaunchHandler;
 
 public enum Mixins {
 
-    Thaumcraft_GuiResearchRecipe(Side.CLIENT, Phase.LATE, "Thaumcraft.GuiResearchRecipe_Mixin", TargetMod.Thaumcraft),;
+    Thaumcraft_GuiResearchRecipe(Side.CLIENT, Phase.LATE, "Thaumcraft.GuiResearchRecipe_Mixin", TargetMod.Thaumcraft),
+    Thaumcraft_TileNode(Side.BOTH, Phase.LATE, "Thaumcraft.TileNode_Mixin", TargetMod.Thaumcraft),;
 
     private final Side side;
     private final Phase phase;
@@ -31,6 +32,7 @@ public enum Mixins {
         return filterMixins(Phase.LATE, loadedMods);
     }
 
+    @SuppressWarnings("unused")
     public static @NotNull List<String> getEarlyMixins(Set<String> loadedMods) {
         return filterMixins(Phase.EARLY, loadedMods);
     }

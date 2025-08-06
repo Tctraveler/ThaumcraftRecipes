@@ -5,6 +5,7 @@ import net.minecraftforge.common.config.Configuration;
 
 import com.Tc_traveler.thaumcraftrecipes.ThaumcraftRecipesRecipe;
 import com.Tc_traveler.thaumcraftrecipes.creativetab.CreativeTabsLoader;
+import com.Tc_traveler.thaumcraftrecipes.events.TREvents;
 import com.Tc_traveler.thaumcraftrecipes.items.TRItems;
 import com.Tc_traveler.thaumcraftrecipes.research.myResearch;
 
@@ -19,6 +20,7 @@ public class CommonProxy {
         ConfigLoader.initConfig();
         CreativeTabsLoader.init();
         TRItems.init();
+        TREvents.init();
     }
 
     public void init(FMLInitializationEvent event) {

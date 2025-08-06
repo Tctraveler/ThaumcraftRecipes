@@ -2,9 +2,11 @@ package com.Tc_traveler.thaumcraftrecipes.crafting;
 
 import java.util.ArrayList;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 
@@ -48,5 +50,33 @@ public class NodeRecipe {
 
     public ItemStack getRecipeOutput() {
         return output;
+    }
+
+    public boolean matches(AspectList itags, ItemStack cat, EntityPlayer player) {
+        if (!this.key.isEmpty() && !ThaumcraftApiHelper.isResearchComplete(player.getCommandSenderName(), this.key)) {
+            return false;
+        }
+        if (this.input instanceof ItemStack && !ThaumcraftApiHelper.itemMatches((ItemStack) this.input, cat, false)) {
+            return false;
+        } else {
+            if (this.input instanceof ArrayList && !((ArrayList<?>) this.input).isEmpty()) {
+                ItemStack[] ores = (ItemStack[]) ((ArrayList) this.input).toArray(new ItemStack[0]);
+                if (!ThaumcraftApiHelper.containsMatch(false, new ItemStack[] { cat }, ores)) {
+                    return false;
+                }
+            }
+
+            if (itags == null) {
+                return false;
+            } else {
+                for (Aspect tag : this.aspects.getAspects()) {
+                    if (itags.getAmount(tag) < this.aspects.getAmount(tag)) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        }
     }
 }
